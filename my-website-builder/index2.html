@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website Builder</title>
+    <style>
+        body {
+            font-family: Arial;
+            display: flex;
+            margin: 0;
+        }
+
+        #sidebar {
+            width: 250px;
+            background: #333;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        #sidebar input, #sidebar button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        #canvas {
+            flex: 1;
+            padding: 40px;
+        }
+
+        #editableText {
+            border: 2px dashed gray;
+            padding: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sidebar">
+        <h2>Editor</h2>
+
+        <input type="text" id="textInput" placeholder="Enter text">
+        <button onclick="changeText()">Change Text</button>
+
+        <input type="color" id="colorInput">
+        <button onclick="changeColor()">Change Color</button>
+    </div>
+
+    <div id="canvas">
+        <div id="editableText">Your Website Text</div>
+    </div>
+
+    <script>
+        function changeText() {
+            let text = document.getElementById("textInput").value;
+            document.getElementById("editableText").innerText = text;
+        }
+
+        function changeColor() {
+            let color = document.getElementById("colorInput").value;
+            document.getElementById("editableText").style.color = color;
+        }
+    </script>
+
+</body>
+</html>
